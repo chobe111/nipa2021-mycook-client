@@ -1,0 +1,7 @@
+{
+  "name": "MyCookApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

@@ -1,9 +1,21 @@
 import React from "react";
-import { SplashPageLayoutProps } from "../components/templates/SplashPageLayout";
 import { SplashPageLayout } from "../components/templates/SplashPageLayout";
 import icon from "../assets/images/main_icon.png";
-import { useEffect, useCallback, useMemo } from "react";
-
+import { useEffect } from "react";
+import { useHistory } from "react-router";
 export const SplashPage: React.VFC = () => {
+  const history = useHistory();
+
+  const handleSplashDone = () => {
+    history.push("/login");
+  };
+
+  useEffect(() => {
+    const handleInterval = setTimeout(() => {
+      handleSplashDone();
+    }, 5000);
+    return () => clearTimeout(handleInterval);
+  }, []);
+
   return <SplashPageLayout imageSrc={icon}></SplashPageLayout>;
 };

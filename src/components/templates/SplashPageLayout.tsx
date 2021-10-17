@@ -1,4 +1,5 @@
 import { url } from "inspector";
+import { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import splash from "../../assets/images/splash_background.jpg";
 export interface SplashPageLayoutProps {
